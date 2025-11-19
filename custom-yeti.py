@@ -36,7 +36,7 @@ APIKEY_INDEX = 2
 TIMEOUT_INDEX = 6
 RETRIES_INDEX = 7
 
-# Yeti instance (your host)
+# Yeti instance (your host) – IMPORTANT: set this to your real IP/URL
 YETI_INSTANCE = 'http://<yeti-server-IP>'
 
 
@@ -324,14 +324,19 @@ def query_api(observable_value, access_token: str) -> any:
     }
     debug(f'# Querying Yeti API: {url}')
     response = requests.get(url, headers=headers, timeout=timeout)
+
     if response.status_code == 200:
         try:
             return response.json()
         except json.JSONDecodeError as e:
             debug(f'# Error decoding JSON from Yeti: {e}')
             return None
-    else:
-        handle_api_error(response.status_code)
+
+    if response.status_code == 404:
+        debug(f"# Yeti returned 404 for value '{observable_value}' (no observable found).")
+        return None
+
+    handle_api_error(response.status_code)
 
 
 def handle_api_error(status_code):
