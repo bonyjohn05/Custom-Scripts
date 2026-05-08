@@ -36,6 +36,9 @@ When the monitor condition is met, OpenSearch Alerting sends the matching alerts
 
 This avoids creating one separate follow-up alert per indexed hit. Instead, all matching alerts in the monitor window are grouped into a single summary alert.
 
+<img width="1431" height="1759" alt="image" src="https://github.com/user-attachments/assets/8e5b7ea0-7348-4eb5-950d-11a9c9d72fea" />
+
+
 ## Architecture
 
 ```text
