@@ -4,6 +4,7 @@ This guide explains how to deploy Wazuh on an offline Ubuntu/Debian server using
 
 The Ansible control server already has the Wazuh offline installation files, and the target Wazuh server does not have internet access.
 
+<img width="1631" height="1695" alt="image" src="https://github.com/user-attachments/assets/1ca05b2c-2b28-4e25-ac94-21bd669598d9" />
 
 
 ## Architecture
@@ -592,16 +593,6 @@ Check Wazuh indexer nodes:
 ansible -i inventory.ini wazuh_offline -b -m shell -a "curl -k -u admin:<PASSWORD> https://127.0.0.1:9200/_cat/nodes?v"
 ```
 
-## Final Flow Summary
-
-```text
-1. Download Wazuh offline files on an internet-connected Linux system.
-2. Generate Wazuh certificates.
-3. Copy wazuh-install.sh, wazuh-offline.tar.gz, and wazuh-install-files.tar to the Ansible server.
-4. Create Ansible inventory for the offline Wazuh server.
-5. Confirm Ansible ping works.
-6. Run the Ansible playbook.
-7. The playbook copies the offline files to the target server.
 8. The playbook fixes missing offline prerequisites.
 9. The playbook removes broken old Wazuh packages if overwrite is enabled.
 10. The playbook runs the Wazuh offline installer.
