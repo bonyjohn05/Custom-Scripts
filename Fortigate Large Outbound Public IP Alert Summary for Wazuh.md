@@ -25,9 +25,8 @@
 
 | Wazuh version | Component | Deployment type | OS |
 |---|---|---|---|
-| 4.x | Wazuh manager, Wazuh indexer, Wazuh dashboard | Single-node or manager-accessible deployment | Linux |
+| 4.14.5 | Wazuh manager, Wazuh indexer, Wazuh dashboard | Single-node | Linux |
 
-> Update this table with the exact Wazuh version and OS used in your environment before publishing.
 
 ## Overview
 
