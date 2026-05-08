@@ -592,9 +592,3 @@ Check Wazuh indexer nodes:
 ```bash
 ansible -i inventory.ini wazuh_offline -b -m shell -a "curl -k -u admin:<PASSWORD> https://127.0.0.1:9200/_cat/nodes?v"
 ```
-
-8. The playbook fixes missing offline prerequisites.
-9. The playbook removes broken old Wazuh packages if overwrite is enabled.
-10. The playbook runs the Wazuh offline installer.
-11. Verify services and access the dashboard.
-```
