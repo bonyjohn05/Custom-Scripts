@@ -1,4 +1,4 @@
-# Fortigate Large Outbound Public IP Alert Summary for Wazuh
+# Complex correlation using the Alerting module and custom script
 
 ## Table of Contents
 
